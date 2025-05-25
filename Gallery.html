@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body id="body">
+    <div class="container">
+        <!--Header-->
+        <div id="Header">
+            <!--Header-Logo-->
+            <div id="Header-Logo">
+                <img src="./Images/Logo.jpg">
+            </div>
+            <div id="Name">
+                <h1>Gallery </h1>
+                <p style="font-size: 20px;">Explore our stunning collection of high-quality car images</p>
+            </div>
+        </div>
+        <!--Section 2 -->
+        <div class="sec2">
+            <h2>Explore Our Car Collection</h2>
+            <p> Discover a curated selection of top-quality vehicles. From sleek modern designs to powerful engines, our
+                gallery showcases the best of what CarHub has to offer.</p>
+            <!--Cards Container-->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="./Images/car1.jpg" alt="Car 1">
+                </div>
+                <div class="slide fade">
+                    <img src="./Images/car2.jpg" alt="Car 2">
+                </div>
+                <div class="slide fade">
+                    <img src="./Images/car3.jpg" alt="Car 3">
+                </div>
+                <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <!--Footer-->
+        <div class="footer">
+            <footer>
+                <p>© 2025 CarHub. All rights reserved.</p>
+                <p> Follow us : <a href="https://www.linkedin.com/in/tahaolayyan/">Linkedin</a> | <a
+                        href="https://www.facebook.com/Tahaa.olayan">Facebook</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+    <div id="Back-Home">
+        <a href="Home.html"><img src="./Images/home.png"></a>
+    </div>
+    <script>
+        let slideIndex = 1;
+        let autoSlideInterval;
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+        }
+
+        function plusSlides(n) {
+            clearInterval(autoSlideInterval);
+            showSlides(slideIndex += n);
+            startAutoSlide();
+        }
+
+        function currentSlide(n) {
+            clearInterval(autoSlideInterval);
+            showSlides(slideIndex = n);
+            startAutoSlide();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000);
+        }
+
+        // Initialize
+        showSlides(slideIndex);
+        startAutoSlide();
+    </script>
+</body>
+
+</html>
