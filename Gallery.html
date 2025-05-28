@@ -26,10 +26,10 @@
             <a href="Services.html">Services</a>
             <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Contact Us </a>
-            <a href="#">FAQ</a>
+            <a href="FAQ.html">FAQ</a>
             <a href="BlogPage.html">Blog</a>
-            <a href="#">Case Studies</a>
-            <a href="#">Login/Signup </a>
+            <a href="CaseStudies.html">Case Studies</a>
+            <a href="SignUp.html">Login/Signup </a>
         </div>
         <!--Section 2 -->
         <div class="sec2">
@@ -69,51 +69,7 @@
     <div id="Back-Home">
         <a href="Home.html"><img src="./Images/home.png"></a>
     </div>
-    <script>
-        let slideIndex = 1;
-        let autoSlideInterval;
-
-        function showSlides(n) {
-            const slides = document.getElementsByClassName("slide");
-            const dots = document.getElementsByClassName("dot");
-
-            if (n > slides.length) slideIndex = 1;
-            if (n < 1) slideIndex = slides.length;
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].classList.add("active");
-        }
-
-        function plusSlides(n) {
-            clearInterval(autoSlideInterval);
-            showSlides(slideIndex += n);
-            startAutoSlide();
-        }
-
-        function currentSlide(n) {
-            clearInterval(autoSlideInterval);
-            showSlides(slideIndex = n);
-            startAutoSlide();
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                plusSlides(1);
-            }, 5000);
-        }
-
-        // Initialize
-        showSlides(slideIndex);
-        startAutoSlide();
-    </script>
+    <script src="javas.js"></script>
 </body>
 
 </html>
