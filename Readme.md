@@ -20,9 +20,9 @@ our goal is to make car ownership easier and more enjoyable for everyone.
 * Gallery
 * Blog
 * Contact Us
-* **Sign Up**
-* **FAQ**
-* **Case Studies**
+* Sign Up
+* FAQ
+* Case Studies
 
 ## 🔧 Technologies Used
 
