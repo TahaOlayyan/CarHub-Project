@@ -41,3 +41,24 @@ function startAutoSlide() {
 // Initialize
 showSlides(slideIndex);
 startAutoSlide();
+
+function checkLogin() {
+    const correctEmail = "Taha_olayyan@hotmail.com";
+    const correctPassword = "123456789";
+
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("password").value;
+
+    if (email === "" || pass === "") {
+        alert("Please fill in both username and password.");
+        return;
+    }
+
+    if (email == correctEmail && pass == correctPassword) {
+        document.getElementById("demo").style.color = "red";
+        document.getElementById("demo").innerHTML = "Logged in...";
+    } else {
+        alert("Incorrect username or password. Please try again.");
+    }
+
+}
